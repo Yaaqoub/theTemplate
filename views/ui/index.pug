@@ -1,0 +1,21 @@
+extends layout
+
+block head
+  include include/head
+
+block header
+  include include/header
+
+block main
+  .container.inTop
+    .row
+      .col-sm-1
+      .col-sm-10
+        include include/main
+      .col-sm-1
+    include include/mainFooter
+
+block footer
+  include include/footer
+block foot
+  include include/foot

@@ -1,0 +1,91 @@
+body {
+  /*background-color: #d9dfe2;*/
+  background-image: url(../images/background.jpg);
+}
+
+.inLeft {
+  margin-left: 100px;
+}
+
+.inRight {
+  margin-right: 20px;
+}
+
+.inTop {
+  margin-top: 30px;
+}
+
+.card {
+  display: block;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  transition: box-shadow .25s;
+}
+
+.image {
+  border: 5px solid transparent;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.card-content {
+  padding:20px;
+  text-align:left;
+}
+
+#logo {
+  color: #010101;
+  font-weight: bold;
+  font-family: “Helvetica Neue”, Arial, sans-serif;
+}
+
+/**
+Icons
+ */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+/*Change icons size here*/
+.social-icons .fa {
+  font-size: 1.8em;
+}
+
+/*Change icons circle size and color here*/
+.social-icons .fa {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons.icon-circle .fa{
+  border-radius: 50%;
+}
+
+.social-icons .fa-whatsapp{background-color:#34af23;}
+.social-icons .fa-google-plus{background-color:#d34836;}
+.social-icons .fa-twitter{background-color:#0084b4;}
+.social-icons .fa-facebook{background-color:#3B5998 ;}

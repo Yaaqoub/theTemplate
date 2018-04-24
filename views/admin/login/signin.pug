@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        include ../include/head
+    body
+        .row
+            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4
+                .login-panel.panel.panel-default
+                    .panel-heading Log in
+                    .panel-body
+                        form(name="signin" method="post" action="/login")
+                            fieldset
+                                .form-group
+                                    input.form-control(placeholder="Username" name="username" type="text" autofocus="")
+                                .form-group
+                                    input.form-control(placeholder="Password" name="password" type="password" value="")
+                                .checkbox
+                                    label
+                                        input(name="remember" type="checkbox" value="Remember Me")
+                                        | Remember Me
+                                if message.length
+                                    .alert.alert-danger
+                                        strong Message!
+                                        |  #{message}
+                                input.btn.btn-primary(type="submit" value='Login')
+
+        include ../include/foot
+

@@ -1,0 +1,21 @@
+extends layout
+
+block head
+  include include/head
+
+block header
+  include include/header
+
+block sidebar
+  include include/sidebar
+
+block main
+  if isAddData === true
+    include forms/addData
+
+  else if isAllData === true
+    include display/allData
+
+block footer
+block foot
+  include include/foot

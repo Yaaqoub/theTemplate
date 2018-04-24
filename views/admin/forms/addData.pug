@@ -1,0 +1,32 @@
+.col-sm-9.col-sm-offset-3.col-lg-10.col-lg-offset-2.main
+    .row
+        ol.breadcrumb
+            li
+                a(href='#')
+                    em.fa.fa-home
+            li.active Add Data
+    .row
+        .col-lg-12
+            h1.page-header.text-center Create New Data
+    .row
+        .col-md-12
+            .panel.panel-default
+                #bodyRequests.panel-body.collapse.in
+                    .col-md-12
+                        form(method='post', action='/admin/addData', enctype='multipart/form-data')
+                            .form-group
+                                label Data Name
+                                input.form-control(placeholder='Data Name', name='data_name')
+                            .form-group
+                                label Data Description
+                                textarea.form-control(placeholder='Description', name='data_description', rows='5')
+                            .form-group
+                                label WebSite Image (256 x 144)
+                                input.form-control(type='file', name='webSiteImage', accept='')
+                            .form-group
+                                label Facebook Image (1200 x 630)
+                                input.form-control(type='file', name='facebookImage', accept='')
+
+                            .text-center
+                                input.btn.btn-primary(type='submit', value='Create New Data', name='0')
+    include ../include/footer
