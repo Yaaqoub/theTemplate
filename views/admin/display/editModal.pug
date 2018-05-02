@@ -1,0 +1,28 @@
+.modal.fade(role='dialog', id=content.id)
+    .modal-dialog
+        form(method='post', action='/admin/allData/edit', enctype='multipart/form-data')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    .form-group
+                        label Data Name
+                        input.form-control(placeholder='Data Name', name='data_name', value=content.data_name)
+                    .form-group
+                        label Data Description
+                        textarea.form-control(placeholder='Description', name='data_description', rows='5')
+                            | #{content.data_description}
+                    .form-group
+                        label WebSite Image (256 x 144)
+                        input.form-control(type='file', name='webSiteImage', accept='')
+                    .form-group
+                        label Facebook Image (1200 x 630)
+                        input.form-control(type='file', name='facebookImage', accept='')
+                    .text-center.bg-red
+                        | You need to re-upload images !
+                .modal-footer
+                    input(type="hidden", name='content_id', value=content.id)
+                    input(type="hidden", name='content_facebookImage', value=content.facebook_image)
+                    input(type="hidden", name='content_websiteImage', value=content.website_image)
+                    input.btn.btn-primary(type='submit', value='Edit', name='0')
+                    button.btn.btn-default(type='button', data-dismiss='modal') Close

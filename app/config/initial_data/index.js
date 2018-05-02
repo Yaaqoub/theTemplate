@@ -5,7 +5,8 @@ let data = {};
 
 module.exports = function(models) {
 
-    let User = models.users;
+    let User = models.users,
+        Configurations = models.configurations;
 
     fs.readdirSync(path.join(__dirname)).filter(function(file) {
         return (file.indexOf(".") !== 0) && (file !== "index.js");
@@ -17,4 +18,5 @@ module.exports = function(models) {
 
     User.create(users.admin).then(function() {});
 
+    Configurations.create(configurations.configs).then(function() {});
 };

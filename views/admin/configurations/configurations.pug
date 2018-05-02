@@ -1,0 +1,49 @@
+.col-sm-9.col-sm-offset-3.col-lg-10.col-lg-offset-2.main
+    .row
+        ol.breadcrumb
+            li
+                a(href='#')
+                    em.fa.fa-home
+            li.active Configurations
+    .row
+        .col-lg-12
+            h1.page-header.text-center Configurations
+    .row
+        .col-md-12
+            .panel.panel-default
+                .panel-heading
+                    b General
+                #bodyRequests.panel-body.collapse.in
+                    .col-md-12
+                        form(method='post', action='/admin/configurations/change')
+                            .form-group
+                                label WebSite Name
+                                input.form-control(placeholder='WebSite Name', name='website_name', value=configs.website_name)
+
+                            .form-group
+                                label WebSite Title
+                                input.form-control(placeholder='WebSite Title', name='website_title', value=configs.website_title)
+
+                            .form-group
+                                label WebSite Email
+                                input.form-control(type='email', placeholder='WebSite Email', name='website_email', value=configs.website_email)
+
+                            .form-group
+                                label WebSite Description
+                                input.form-control(placeholder='WebSite Description', name='website_description', value=configs.website_description)
+
+                            .form-group
+                                label WebSite Keywords
+                                input.form-control(placeholder='WebSite Keywords', name='website_keywords', value=configs.website_keywords)
+
+                            .form-group
+                                label Copyright ©
+                                input.form-control(placeholder='Copyright', name='Copyright', value=configs.Copyright)
+
+                            .form-group
+                                label City & Country
+                                input.form-control(placeholder='City & Country', name='city_country', value=configs.city_country)
+
+                            .text-center
+                                input.btn.btn-primary(type='submit', value='Save Changes', name='0')
+    include ../include/footer

@@ -13,32 +13,35 @@
             .panel.panel-default
                 #bodyRequests.panel-body.collapse.in
                     .col-md-12
-                        form(method='post', action='/admin/allData')
-                            table.table.table-hover
-                                thead
-                                    tr
-                                        th ID
-                                        th Data Name
-                                        th Data Description
-                                        th Website Image
-                                        th Facebook Image
-                                tbody
-                                    if contents.length
-                                        each content in contents
-                                            tr
-                                                td #{content.id}
-                                                td #{content.data_name}
-                                                td #{content.data_description}
-                                                td
-                                                    img(alt='Website Image', src='/images/card_images/' + content.website_image, height='60', width='60')
-                                                td
-                                                    img(alt='Facebook Image', src='/images/facebook_images/' + content.facebook_image, height='60', width='100')
-                                                td
+                        table.table.table-hover
+                            thead
+                                tr
+                                    th ID
+                                    th Data Name
+                                    th Data Description
+                                    th Website Image
+                                    th Facebook Image
+                            tbody
+                                if contents.length
+                                    each content in contents
+                                        tr
+                                            td #{content.id}
+                                            td #{content.data_name}
+                                            td #{content.data_description}
+                                            td
+                                                img(alt='Website Image', src='/images/card_images/' + content.website_image, height='60', width='60')
+                                            td
+                                                img(alt='Facebook Image', src='/images/facebook_images/' + content.facebook_image, height='60', width='100')
+                                            td
+                                                form(method='post', action='/admin/allData/delete')
                                                     input(type="hidden", name='content_id', value=content.id)
-                                                    button.btn.btn-primary(type='submit', name='delete')
-                                                        span.fa.fa-minus-square.fa-lg(aria-hidden='true')
-                                                    button.btn.btn-primary(type='submit', name='edit')
+                                                    input(type="hidden", name='content_website_image', value=content.website_image)
+                                                    input(type="hidden", name='content_facebook_image', value=content.facebook_image)
+                                                    button.btn.btn-danger.splitBetweenRight(type='submit', name='delete')
+                                                        span.fa.fa-times-circle.fa-lg(aria-hidden='true')
+                                                    button.btn.btn-primary(type='button', name='edit', data-toggle="modal", data-target='#' + content.id)
                                                         span.fa.fa-edit.fa-lg(aria-hidden='true')
+                                            include editModal
 
 
     include ../include/footer

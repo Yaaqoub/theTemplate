@@ -12,6 +12,6 @@ module.exports = function(app) {
     /**
      * (GET Method)
      */
-    app.get('/administrator', indexController.index);
+    app.get('/administrator', isLoggedIn, indexController.index);
 
 };

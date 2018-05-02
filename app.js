@@ -58,6 +58,8 @@ app.use(fileUpload());
  * UI Routes
  */
 let indexRouteUI = require('./app/routes/ui/index.js')(app);
+let privacyPolicyRouteUI = require('./app/routes/ui/privacyPolicy.js')(app);
+let termsOfUseRouteUI = require('./app/routes/ui/termsOfUse.js')(app);
 
 /**
  * Admin Routes
@@ -66,6 +68,7 @@ let indexRouteAdmin = require('./app/routes/admin/index.js')(app);
 let authRouteAdmin = require('./app/routes/admin/auth.js')(app, passport);
 let addDataRouteAdmin = require('./app/routes/admin/addData.js')(app);
 let allDataRouteAdmin = require('./app/routes/admin/allData.js')(app);
+let configurationsAdmin = require('./app/routes/admin/configurations.js')(app);
 
 /**
  * Load passport strategies

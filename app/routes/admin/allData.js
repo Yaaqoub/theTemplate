@@ -12,10 +12,12 @@ module.exports = function(app) {
     /**
      * (GET Method)
      */
-    app.get('/admin/allData', allDataController.index);
+    app.get('/admin/allData', isLoggedIn, allDataController.index);
 
     /**
      * (POST Method)
      */
-    app.post('/admin/allData', allDataController.allData);
+    app.post('/admin/allData/delete', isLoggedIn, allDataController.dataDelete);
+
+    app.post('/admin/allData/edit', isLoggedIn, allDataController.dataEdit);
 };

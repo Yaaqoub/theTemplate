@@ -5,6 +5,11 @@ body {
   color: #444444;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+
+.splitBetweenRight {
+  margin-right: 2px;
+}
+
 p {
   color: #777; }
 
